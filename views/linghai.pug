@@ -1,0 +1,17 @@
+extends layout
+block content
+  div#nav
+    ul
+      each title,index in types
+        if(typeIndex == index)
+          li
+            a(href=urlPrefix + index).current #{title}
+        else
+          li
+            a(href=urlPrefix + index) #{title}
+  table
+    tbody
+      each account in accounts
+        tr
+          td(bgcolor="#ADD8E6") #{account.name}
+          th #{account.phone}
